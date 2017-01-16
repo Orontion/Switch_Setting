@@ -24,6 +24,8 @@ private slots:
 
     void on_but_Delete_clicked();
 
+    void on_action_Term_triggered();
+
 private:
     Ui::MainWindow *ui;
 };

@@ -7,6 +7,9 @@
 #include <QMessageBox>
 #include <QTextStream>
 
+//Для того, чтобы из этой формы можно было открыть другие, их заголовочные файлы нужно подключать сюда
+#include "terminal.h"
+
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -84,4 +87,14 @@ void MainWindow::on_table_VLAN_itemSelectionChanged()
 void MainWindow::on_but_Delete_clicked()
 {
     ui->table_VLAN->removeRow(ui->table_VLAN->selectionModel()->currentIndex().row());
+}
+
+
+
+
+//Вызов окна терминала
+void MainWindow::on_action_Term_triggered()
+{
+    Terminal *Term = new Terminal(this);
+    Term->show();
 }

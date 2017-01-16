@@ -249,6 +249,9 @@
      <string>Файл</string>
     </property>
     <addaction name="action_Term"/>
+    <addaction name="action_Conf"/>
+    <addaction name="separator"/>
+    <addaction name="action_Exit"/>
    </widget>
    <addaction name="menu_File"/>
   </widget>
@@ -269,8 +272,35 @@
     <string>Открыть терминал</string>
    </property>
   </action>
+  <action name="action_Conf">
+   <property name="text">
+    <string>Настроить свитч</string>
+   </property>
+  </action>
+  <action name="action_Exit">
+   <property name="text">
+    <string>Выход</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>action_Exit</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>231</x>
+     <y>204</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

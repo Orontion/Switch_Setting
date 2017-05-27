@@ -24,7 +24,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
+//Кнопка добавления данных для настройки VLAN
 void MainWindow::on_but_Add_clicked()
 {
     //Проверка введенных данных

@@ -128,7 +128,7 @@
    <sender>but_Close</sender>
    <signal>clicked()</signal>
    <receiver>Terminal</receiver>
-   <slot>close()</slot>
+   <slot>hide()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>339</x>

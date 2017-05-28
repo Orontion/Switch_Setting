@@ -7,6 +7,8 @@ namespace Ui {
 class MainWindow;
 }
 
+class Terminal;
+
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -25,10 +27,11 @@ private slots:
 //Клик по кнопке удаления VLAN-а
     void on_but_Delete_clicked();
 //Выбор пункта меню "Файл -> Терминал..."
-    void on_action_Term_triggered();
+//    void on_action_Term_triggered();
 
 private:
     Ui::MainWindow *ui;
+    Terminal *Term;
 };
 
 #endif // MAINWINDOW_H

@@ -16,8 +16,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    //Создаем объект с окном терминала
     Term = new Terminal;
-    connect(ui->action_Term, &QAction::triggered, Term, &MainWindow::show);
+    //Соединием сигнал от пункта меню "Терминал..." со слотом "Показать окно" объекта Term
+    connect(ui->action_Term, &QAction::triggered, Term, &Terminal::show);
 }
 
 MainWindow::~MainWindow()

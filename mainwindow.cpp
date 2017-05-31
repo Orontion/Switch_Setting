@@ -16,7 +16,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
+    //Создаем объект с окном терминала
+    Term = new Terminal;
+    //Соединием сигнал от пункта меню "Терминал..." со слотом "Показать окно" объекта Term
+    connect(ui->action_Term, &QAction::triggered, Term, &Terminal::show);
 }
 
 MainWindow::~MainWindow()
@@ -24,7 +27,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
+//Кнопка добавления данных для настройки VLAN
 void MainWindow::on_but_Add_clicked()
 {
     //Проверка введенных данных
@@ -87,14 +90,4 @@ void MainWindow::on_table_VLAN_itemSelectionChanged()
 void MainWindow::on_but_Delete_clicked()
 {
     ui->table_VLAN->removeRow(ui->table_VLAN->selectionModel()->currentIndex().row());
-}
-
-
-
-
-//Вызов окна терминала
-void MainWindow::on_action_Term_triggered()
-{
-    Terminal *Term = new Terminal(this);
-    Term->show();
 }

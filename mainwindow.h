@@ -10,6 +10,8 @@ class MainWindow;
 }
 
 class Terminal;
+class ConfSettings;
+
 
 class MainWindow : public QMainWindow
 {
@@ -35,6 +37,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     Terminal *Term;
+    ConfSettings *ConfStgs;
 };
 
 #endif // MAINWINDOW_H

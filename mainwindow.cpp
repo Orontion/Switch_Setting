@@ -9,6 +9,7 @@
 
 //Для того, чтобы из этой формы можно было открыть другие, их заголовочные файлы нужно подключать сюда
 #include "terminal.h"
+#include "confsettings.h"
 
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -18,8 +19,11 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     //Создаем объект с окном терминала
     Term = new Terminal;
+    ConfStgs = new ConfSettings;
     //Соединием сигнал от пункта меню "Терминал..." со слотом "Показать окно" объекта Term
     connect(ui->action_Term, &QAction::triggered, Term, &Terminal::show);
+    //
+    connect(ui->action_ConfSettings, &QAction::triggered, ConfStgs, &ConfSettings::show);
 }
 
 MainWindow::~MainWindow()

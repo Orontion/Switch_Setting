@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 
+
+
 namespace Ui {
 class MainWindow;
 }
@@ -17,7 +19,7 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
-//Слоты окна
+//Слоты объекта MainWindow
 private slots:
 
 //Клик по кнопке "Добавить VLAN"
@@ -29,6 +31,7 @@ private slots:
 //Выбор пункта меню "Файл -> Терминал..."
 //    void on_action_Term_triggered();
 
+//Область видимости внутри объекта MainWindow
 private:
     Ui::MainWindow *ui;
     Terminal *Term;

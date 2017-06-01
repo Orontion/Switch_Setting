@@ -1,21 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <author/>
- <comment/>
- <exportmacro/>
  <class>ConfSettings</class>
- <widget name="ConfSettings" class="QWidget">
+ <widget class="QMainWindow" name="ConfSettings">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>446</width>
+    <height>274</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Настройки конфигурирования</string>
   </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="LblConfFile">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>171</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Файл конфигурирования</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="CmbConfFile">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>10</y>
+      <width>201</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="ButClose">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>230</y>
+      <width>80</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Закрыть</string>
+    </property>
+   </widget>
+  </widget>
  </widget>
- <pixmapfunction/>
- <connections/>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>ButClose</sender>
+   <signal>clicked()</signal>
+   <receiver>ConfSettings</receiver>
+   <slot>hide()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>389</x>
+     <y>240</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>222</x>
+     <y>136</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

@@ -11,25 +11,32 @@
 #include "terminal.h"
 #include "confsettings.h"
 
+//Мои модули
+#include "confinterpreter.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    //Создаем объект с окном терминала
-    Term = new Terminal;
-    ConfStgs = new ConfSettings;
-    //Соединием сигнал от пункта меню "Терминал..." со слотом "Показать окно" объекта Term
+    //Создаем объекты с окнами
+    Term = new Terminal(this);
+    ConfStgs = new ConfSettings(this);
+
+    //Соединяем сигнал от пункта меню "Терминал..." со слотом "Показать окно" объекта Term
     connect(ui->action_Term, &QAction::triggered, Term, &Terminal::show);
-    //
+    //Соединяем сигнал от пункта меню "Настройка конфигурирования..." со слотом объекта ConfStgs
     connect(ui->action_ConfSettings, &QAction::triggered, ConfStgs, &ConfSettings::show);
+
+    //Создаём объект интерпретатора файлов
+    ConfInt = new ConfInterpreter;
+    ConfStgs->Take_Files(ConfInt->Scan_Files(""));
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
-}
+}class ConfInterpreter;
 
 //Кнопка добавления данных для настройки VLAN
 void MainWindow::on_but_Add_clicked()

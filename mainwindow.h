@@ -11,13 +11,16 @@ class MainWindow;
 
 class Terminal;
 class ConfSettings;
-
+class ConfInterpreter;
 
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
+
+    ConfInterpreter *ConfInt;//Указатель на объект - интерпретатор файлов. В Public, пока не придумаю решение получше
+
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
@@ -38,6 +41,7 @@ private:
     Ui::MainWindow *ui;
     Terminal *Term;
     ConfSettings *ConfStgs;
+
 };
 
 #endif // MAINWINDOW_H

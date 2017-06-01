@@ -15,10 +15,12 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     terminal.cpp \
+    confinterpreter.cpp \
     confsettings.cpp
 
 HEADERS  += mainwindow.h \
     terminal.h \
+    confinterpreter.h \
     confsettings.h
 
 FORMS    += mainwindow.ui \
